@@ -1,0 +1,271 @@
+/* =====================
+   GLOBAL (MOBILE FIRST)
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =====================
+   NAVBAR (MOBILE FIRST)
+===================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+/* Hamburger visible on mobile */
+.menu-btn {
+    width: 35px;
+    cursor: pointer;
+    display: block;
+    z-index: 101;
+}
+
+/* Mobile menu hidden by default */
+.nav-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100vh;
+    transition: 0.5s ease;
+}
+
+.nav-links li {
+    margin: 20px 0;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #fc036b;
+}
+
+/* Toggle class */
+.mobile-menu {
+    margin-top: 0;
+}
+
+/* Button */
+.ctn {
+    padding: 8px 16px;
+    background: #fc036b;
+    border-radius: 20px;
+    color: white;
+}
+
+/* =====================
+   HERO SECTION (MOBILE)
+===================== */
+header {
+    height: 100vh;
+    background: url("image/WhatsApp Image 2026-01-25 at 12.04.15 PM.jpeg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+}
+
+.header-content {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.header-content h2 {
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.header-content h1 {
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.line {
+    width: 120px;
+    height: 2px;
+    background: red;
+    margin: 10px auto 20px;
+}
+
+/* =====================
+   SECTIONS
+===================== */
+section {
+    padding: 80px 8%;
+}
+
+.title {
+    text-align: center;
+    color: white;
+}
+
+.title h2 {
+    font-size: 26px;
+}
+
+/* =====================
+   INFORMATION – CARDS
+===================== */
+.info-cards {
+    display: grid;
+    grid-template-columns: 1fr; /* MOBILE FIRST */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: rgba(0,0,0,0.85);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background: black;
+}
+
+.card h4 {
+    margin: 12px 0 8px;
+    color: #fc036b;
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 13px;
+    padding: 0 12px 16px;
+    opacity: 0.85;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(252, 3, 107, 0.6);
+}
+
+/* =====================
+   EXPLORE / CONTACT
+===================== */
+.explore {
+    background: url("image/WhatsApp Image 2026-01-25 at 5.05.07 PM.jpeg") center/cover no-repeat;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.explore::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+}
+
+.explore * {
+    position: relative;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* =====================
+   TABLET (>=600px)
+===================== */
+@media (min-width: 600px) {
+    .info-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header-content h1 {
+        font-size: 40px;
+    }
+}
+
+/* =====================
+   DESKTOP (>=1024px)
+===================== */
+@media (min-width: 1024px) {
+    .menu-btn {
+        display: none;
+    }
+
+    .nav-links {
+        position: static;
+        height: auto;
+        flex-direction: row;
+        background: transparent;
+        margin-top: 0;
+    }
+
+    .nav-links li {
+        margin: 0 20px;
+    }
+
+    .info-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .header-content h1 {
+        font-size: 48px;
+    }
+
+    section {
+        padding: 100px 10%;
+    }
+}

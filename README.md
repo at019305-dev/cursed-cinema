@@ -1,6 +1,10 @@
 # 🕯️ The Cursed Realm
 
-> A responsive horror-themed website built with pure HTML, CSS, and vanilla JavaScript.
+> *You found this place for a reason. Or perhaps… it found you.*
+
+**Step into the void.** The Cursed Realm is not just a website — it's a gateway. Behind every shadow lies a story too twisted to speak aloud. The deeper you scroll, the closer they come. Walls whisper. Images breathe. And by the time you reach the end, it may already be too late to leave.
+
+This is a fully responsive horror-themed experience built with pure HTML, CSS, and vanilla JavaScript. No frameworks. No escape.
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)

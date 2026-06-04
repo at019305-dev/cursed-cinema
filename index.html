@@ -3,166 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horror Website</title>
+    <meta name="description" content="The Cursed Realm – A horror-themed responsive website featuring dark archives, haunted imagery, and chilling stories.">
+    <meta name="author" content="at019305-dev">
+    <meta property="og:title" content="The Cursed Realm">
+    <meta property="og:description" content="Enter if you dare. A horror-themed responsive website.">
+    <title>The Cursed Realm | Horror Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar">
-    <h1 class="logo">THE CURSED REALM</h1>
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <a href="#home" class="logo" aria-label="The Cursed Realm – Home">THE CURSED REALM</a>
 
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#information">Information</a></li>
+        <li><a href="#information">Archives</a></li>
         <li><a href="#contact" class="ctn">Contact</a></li>
     </ul>
 
-    <img src="image/images.png" class="menu-btn" alt="menu">
+    <!-- Hamburger button (mobile) -->
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </nav>
 
-<!-- HOME / HERO -->
-<header id="home">
+<!-- ========== HERO ========== -->
+<header id="home" role="banner">
     <div class="overlay"></div>
     <div class="header-content">
-        <h2>You Were Never Alone</h2>
+        <p class="tagline">You Were Never Alone</p>
         <div class="line"></div>
         <h1>WELCOME TO THE ABYSS</h1>
+        <p class="sub-text">Step beyond the veil — where shadows breathe and silence speaks.</p>
         <a href="#information" class="ctn">Enter If You Dare</a>
     </div>
 </header>
 
-<!-- INFORMATION -->
+<!-- ========== ARCHIVES / INFORMATION ========== -->
+<section id="information" class="events" aria-labelledby="archives-title">
 
-<section id="information" class="events">
     <div class="title">
-        <h2>Forbidden Horror Archives</h2>
+        <h2 id="archives-title">Forbidden Horror Archives</h2>
         <div class="line"></div>
+        <p class="section-desc">Tread carefully. Each entry holds a darkness of its own.</p>
     </div>
 
     <div class="info-cards">
-         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 5.18.03 PM (1).jpeg" alt="">
-            <h4>The Whispering Dead</h4>
-            <p>Walls breathe. Shadows crawl. Sleep never returns.</p>
+
+        <div class="card">
+            <img src="image/WhatsApp Image 2026-01-25 at 5.18.03 PM (1).jpeg" alt="The Whispering Dead – dark horror scene" loading="lazy">
+            <div class="card-body">
+                <h3>The Whispering Dead</h3>
+                <p>Walls breathe. Shadows crawl. Sleep never returns.</p>
+            </div>
         </div>
 
         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 5.18.03 PM.jpeg" alt="">
-            <h4>House Without Eyes</h4>
-            <p>The house watches even when you don’t.</p>
+            <img src="image/WhatsApp Image 2026-01-25 at 5.18.03 PM.jpeg" alt="House Without Eyes – abandoned haunted house" loading="lazy">
+            <div class="card-body">
+                <h3>House Without Eyes</h3>
+                <p>The house watches even when you don't.</p>
+            </div>
         </div>
 
         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 5.18.02 PM.jpeg" alt="">
-            <h4>Midnight Caller</h4>
-            <p>Every call brings something closer.</p>
-        </div>
-         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 4.55.36 PM.jpeg" alt="">
-            <h4>The Whispering Dead</h4>
-            <p>Walls breathe. Shadows crawl. Sleep never returns.</p>
+            <img src="image/WhatsApp Image 2026-01-25 at 5.18.02 PM.jpeg" alt="Midnight Caller – eerie phone horror" loading="lazy">
+            <div class="card-body">
+                <h3>Midnight Caller</h3>
+                <p>Every call brings something closer.</p>
+            </div>
         </div>
 
         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 4.55.37 PM (1).jpeg" alt="">
-            <h4>House Without Eyes</h4>
-            <p>The house watches even when you don’t.</p>
+            <img src="image/WhatsApp Image 2026-01-25 at 4.55.36 PM.jpeg" alt="The Whispering Dead – dark corridor" loading="lazy">
+            <div class="card-body">
+                <h3>The Whispering Dead</h3>
+                <p>Walls breathe. Shadows crawl. Sleep never returns.</p>
+            </div>
         </div>
 
         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 4.55.37 PM.jpeg" alt="">
-            <h4>Midnight Caller</h4>
-            <p>Every call brings something closer.</p>
+            <img src="image/WhatsApp Image 2026-01-25 at 4.55.37 PM (1).jpeg" alt="House Without Eyes – foggy nightmare" loading="lazy">
+            <div class="card-body">
+                <h3>House Without Eyes</h3>
+                <p>The house watches even when you don't.</p>
+            </div>
         </div>
 
         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 4.55.38 PM (1).jpeg" alt="">
-            <h4>The Last Door</h4>
-            <p>Once opened, it never closes again.</p>
-        </div>
-         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 4.55.38 PM (2).jpeg" alt="">
-            <h4>The NuN</h4>
-            <p>She is gonna find you.</p>
-        </div>
-        <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 4.55.38 PM.jpeg" alt="">
-            <h4>Death</h4>
-            <p>Death's gonna get you.</p>
-        </div>
-        <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 4.55.39 PM.jpeg" alt="">
-            <h4>The Whispering Dead</h4>
-            <p>Walls breathe. Shadows crawl. Sleep never returns.</p>
+            <img src="image/WhatsApp Image 2026-01-25 at 4.55.37 PM.jpeg" alt="Midnight Caller – late night terror" loading="lazy">
+            <div class="card-body">
+                <h3>Midnight Caller</h3>
+                <p>Every call brings something closer.</p>
+            </div>
         </div>
 
         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 12.04.12 PM.jpeg" alt="">
-            <h4>The Whispering Dead</h4>
-            <p>Walls breathe. Shadows crawl. Sleep never returns.</p>
+            <img src="image/WhatsApp Image 2026-01-25 at 4.55.38 PM (1).jpeg" alt="The Last Door – forbidden entrance" loading="lazy">
+            <div class="card-body">
+                <h3>The Last Door</h3>
+                <p>Once opened, it never closes again.</p>
+            </div>
         </div>
 
         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 12.04.13 PM (1).jpeg" alt="">
-            <h4>House Without Eyes</h4>
-            <p>The house watches even when you don’t.</p>
+            <img src="image/WhatsApp Image 2026-01-25 at 4.55.38 PM (2).jpeg" alt="The Nun – demonic figure" loading="lazy">
+            <div class="card-body">
+                <h3>The Nun</h3>
+                <p>She is coming to find you.</p>
+            </div>
         </div>
 
         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 12.04.13 PM.jpeg" alt="">
-            <h4>Midnight Caller</h4>
-            <p>Every call brings something closer.</p>
+            <img src="image/WhatsApp Image 2026-01-25 at 4.55.38 PM.jpeg" alt="Death – skeletal apparition" loading="lazy">
+            <div class="card-body">
+                <h3>Death Approaches</h3>
+                <p>No escape. No mercy. No tomorrow.</p>
+            </div>
         </div>
 
         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 12.04.14 PM.jpeg" alt="">
-            <h4>The Last Door</h4>
-            <p>Once opened, it never closes again.</p>
+            <img src="image/WhatsApp Image 2026-01-25 at 4.55.39 PM.jpeg" alt="The Whispering Dead – haunted forest" loading="lazy">
+            <div class="card-body">
+                <h3>The Whispering Dead</h3>
+                <p>Walls breathe. Shadows crawl. Sleep never returns.</p>
+            </div>
         </div>
-         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 12.04.14 PM (1).jpeg" alt="">
-            <h4>The NuN</h4>
-            <p>She is gonna find you.</p>
-        </div>
+
         <div class="card">
-            <img src="image/WhatsApp Image 2026-01-25 at 12.04.13 PM (2).jpeg" alt="">
-            <h4>Death</h4>
-            <p>Death's gonna get you.</p>
+            <img src="image/WhatsApp Image 2026-01-25 at 12.04.12 PM.jpeg" alt="The Whispering Dead – midnight horror" loading="lazy">
+            <div class="card-body">
+                <h3>The Whispering Dead</h3>
+                <p>Walls breathe. Shadows crawl. Sleep never returns.</p>
+            </div>
         </div>
+
+        <div class="card">
+            <img src="image/WhatsApp Image 2026-01-25 at 12.04.13 PM (1).jpeg" alt="House Without Eyes – cursed dwelling" loading="lazy">
+            <div class="card-body">
+                <h3>House Without Eyes</h3>
+                <p>The house watches even when you don't.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/WhatsApp Image 2026-01-25 at 12.04.13 PM.jpeg" alt="Midnight Caller – horror phone call" loading="lazy">
+            <div class="card-body">
+                <h3>Midnight Caller</h3>
+                <p>Every call brings something closer.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/WhatsApp Image 2026-01-25 at 12.04.14 PM.jpeg" alt="The Last Door – dark threshold" loading="lazy">
+            <div class="card-body">
+                <h3>The Last Door</h3>
+                <p>Once opened, it never closes again.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/WhatsApp Image 2026-01-25 at 12.04.14 PM (1).jpeg" alt="The Nun – sacred horror" loading="lazy">
+            <div class="card-body">
+                <h3>The Nun</h3>
+                <p>She is coming to find you.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/WhatsApp Image 2026-01-25 at 12.04.13 PM (2).jpeg" alt="Death – final darkness" loading="lazy">
+            <div class="card-body">
+                <h3>Death Approaches</h3>
+                <p>No escape. No mercy. No tomorrow.</p>
+            </div>
+        </div>
+
     </div>
 </section>
 
-
-<!-- CONTACT -->
-<section id="contact" class="explore">
-    <h1>DO NOT CALL AFTER MIDNIGHT</h1>
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="explore" aria-labelledby="contact-title">
+    <h2 id="contact-title">DO NOT CALL AFTER MIDNIGHT</h2>
     <p>
-        This place listens.
-        The longer you stay, the louder the whispers become.
+        This place listens.<br>
+        The longer you stay, the louder the whispers become.<br>
         Turn back before it learns your name.
     </p>
-    <a href="#" class="ctn">Break the Seal</a>
+    <a href="mailto:at019305@example.com" class="ctn">Break the Seal</a>
 </section>
 
-<!-- Footer -->
-<footer>
-    <p>© 2026 The Cursed Realm | All Souls Reserved</p>
+<!-- ========== FOOTER ========== -->
+<footer role="contentinfo">
+    <p>© 2026 <strong>The Cursed Realm</strong> | Built by <a href="https://github.com/at019305-dev" target="_blank" rel="noopener noreferrer">at019305-dev</a> | All Souls Reserved</p>
 </footer>
 
-<!-- Hamburger JS (very small & easy) -->
-
-<img src="image/images.png" class="menu-btn" alt="menu">
-
-
-
-
 <script>
-    const menuBtn = document.querySelector(".menu-btn");
-    const navLinks = document.querySelector(".nav-links");
+    // Hamburger menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
 
-    menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("mobile-menu");
+    menuBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('mobile-menu');
+        menuBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close menu on nav link click (mobile UX)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('mobile-menu');
+            menuBtn.setAttribute('aria-expanded', false);
+        });
+    });
+
+    // Navbar background on scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
 </script>
 

@@ -1,103 +1,184 @@
+/* =====================================================
+   THE CURSED REALM — style.css
+   Author  : at019305-dev
+   Version : 2.0.0
+   Description: Horror-themed responsive website styles
+===================================================== */
+
 /* =====================
-   GLOBAL (MOBILE FIRST)
+   CSS VARIABLES
 ===================== */
-* {
+:root {
+    --color-primary:   #fc036b;
+    --color-danger:    #fc0303;
+    --color-bg:        #000;
+    --color-surface:   rgba(0, 0, 0, 0.85);
+    --color-text:      #fff;
+    --color-muted:     rgba(255, 255, 255, 0.75);
+    --font-horror:     'Creepster', cursive;
+    --font-body:       'Oswald', sans-serif;
+    --transition:      0.3s ease;
+    --radius:          12px;
+    --navbar-height:   70px;
+}
+
+/* =====================
+   RESET & BASE
+===================== */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
 body {
-    background: #000;
-    font-family: Arial, Helvetica, sans-serif;
+    background: var(--color-bg);
+    font-family: var(--font-body);
+    color: var(--color-text);
+    line-height: 1.6;
 }
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 ul {
     list-style: none;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+}
+
 /* =====================
-   NAVBAR (MOBILE FIRST)
+   NAVBAR
 ===================== */
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    padding: 16px 20px;
+    height: var(--navbar-height);
+    padding: 0 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
-    z-index: 100;
+    z-index: 1000;
+    transition: background var(--transition), backdrop-filter var(--transition);
+}
+
+/* Adds frosted background after scrolling */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 16px rgba(252, 3, 107, 0.15);
 }
 
 .logo {
-    font-size: 18px;
-    letter-spacing: 2px;
+    font-family: var(--font-horror);
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--color-text);
+    transition: color var(--transition);
 }
 
-/* Hamburger visible on mobile */
+.logo:hover {
+    color: var(--color-primary);
+}
+
+/* =====================
+   HAMBURGER BUTTON
+===================== */
 .menu-btn {
-    width: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
     cursor: pointer;
-    display: block;
-    z-index: 101;
+    padding: 4px;
+    z-index: 1100;
 }
 
-/* Mobile menu hidden by default */
+.menu-btn span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: all var(--transition);
+}
+
+/* =====================
+   MOBILE MENU
+===================== */
 .nav-links {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: black;
+    background: #000;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: -100vh;
-    transition: 0.5s ease;
+    gap: 32px;
+    transform: translateY(-100%);
+    transition: transform 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+    z-index: 999;
 }
 
-.nav-links li {
-    margin: 20px 0;
+.nav-links.mobile-menu {
+    transform: translateY(0);
 }
 
 .nav-links a {
-    color: white;
-    font-size: 18px;
-    transition: color 0.3s ease;
+    font-family: var(--font-horror);
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--color-text);
+    transition: color var(--transition);
 }
 
 .nav-links a:hover {
-    color: #fc036b;
-}
-
-/* Toggle class */
-.mobile-menu {
-    margin-top: 0;
-}
-
-/* Button */
-.ctn {
-    padding: 8px 16px;
-    background: #fc036b;
-    border-radius: 20px;
-    color: white;
+    color: var(--color-primary);
 }
 
 /* =====================
-   HERO SECTION (MOBILE)
+   CTA BUTTON
+===================== */
+.ctn {
+    display: inline-block;
+    padding: 10px 22px;
+    background: var(--color-danger);
+    border-radius: 25px;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.ctn:hover {
+    background: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(252, 3, 107, 0.45);
+}
+
+/* =====================
+   HERO / HEADER
 ===================== */
 header {
-    height: 100vh;
-    background: url("image/WhatsApp Image 2026-01-25 at 12.04.15 PM.jpeg") center/cover no-repeat;
+    min-height: 100vh;
+    background: url("image/WhatsApp Image 2026-01-25 at 12.04.15 PM.jpeg") center / cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,125 +188,202 @@ header {
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.65);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.75) 100%);
 }
 
 .header-content {
     position: relative;
     text-align: center;
-    color: white;
+    padding: 0 20px;
+    animation: fadeInUp 1s ease both;
 }
 
-.header-content h2 {
+.tagline {
+    font-family: var(--font-horror);
     font-size: 16px;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
+    color: var(--color-primary);
+    text-transform: uppercase;
 }
 
 .header-content h1 {
-    font-size: 32px;
-    margin: 20px 0;
+    font-family: var(--font-horror);
+    font-size: 36px;
+    letter-spacing: 4px;
+    margin: 16px 0 12px;
+    text-shadow: 0 0 20px rgba(252, 3, 107, 0.5);
+}
+
+.sub-text {
+    font-size: 14px;
+    color: var(--color-muted);
+    margin-bottom: 28px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .line {
-    width: 120px;
+    width: 80px;
     height: 2px;
-    background: red;
-    margin: 10px auto 20px;
+    background: var(--color-danger);
+    margin: 12px auto;
+    border-radius: 2px;
 }
 
 /* =====================
    SECTIONS
 ===================== */
 section {
-    padding: 80px 8%;
+    padding: 90px 6%;
 }
 
 .title {
     text-align: center;
-    color: white;
+    margin-bottom: 50px;
 }
 
 .title h2 {
-    font-size: 26px;
+    font-family: var(--font-horror);
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: var(--color-text);
+}
+
+.section-desc {
+    font-size: 14px;
+    color: var(--color-muted);
+    margin-top: 10px;
 }
 
 /* =====================
-   INFORMATION – CARDS
+   CARDS GRID
 ===================== */
 .info-cards {
     display: grid;
-    grid-template-columns: 1fr; /* MOBILE FIRST */
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: 1fr;
+    gap: 24px;
 }
 
 .card {
-    background: rgba(0,0,0,0.85);
-    border-radius: 12px;
+    background: var(--color-surface);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
     overflow: hidden;
-    text-align: center;
-    color: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .card img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    background: black;
+    height: 200px;
+    object-fit: cover;
+    background: #111;
+    transition: transform 0.5s ease;
 }
 
-.card h4 {
-    margin: 12px 0 8px;
-    color: #fc036b;
-    font-size: 16px;
+.card:hover img {
+    transform: scale(1.05);
 }
 
-.card p {
+.card-body {
+    padding: 14px 16px 18px;
+    text-align: center;
+}
+
+.card-body h3 {
+    font-family: var(--font-horror);
+    font-size: 18px;
+    color: var(--color-primary);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.card-body p {
     font-size: 13px;
-    padding: 0 12px 16px;
-    opacity: 0.85;
+    color: var(--color-muted);
+    line-height: 1.5;
 }
 
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(252, 3, 107, 0.6);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(252, 3, 107, 0.35);
 }
 
 /* =====================
-   EXPLORE / CONTACT
+   CONTACT SECTION
 ===================== */
 .explore {
-    background: url("image/WhatsApp Image 2026-01-25 at 5.05.07 PM.jpeg") center/cover no-repeat;
-    color: white;
+    background: url("image/WhatsApp Image 2026-01-25 at 5.05.07 PM.jpeg") center / cover no-repeat;
     text-align: center;
     position: relative;
+    padding: 120px 8%;
 }
 
 .explore::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.72);
 }
 
-.explore * {
+.explore > * {
     position: relative;
+}
+
+.explore h2 {
+    font-family: var(--font-horror);
+    font-size: 28px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(252, 3, 107, 0.4);
+}
+
+.explore p {
+    font-size: 15px;
+    color: var(--color-muted);
+    max-width: 500px;
+    margin: 0 auto 32px;
+    line-height: 1.8;
 }
 
 /* =====================
    FOOTER
 ===================== */
 footer {
-    background: black;
-    color: white;
+    background: #050505;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    color: var(--color-muted);
     text-align: center;
-    padding: 20px;
-    font-size: 14px;
+    padding: 24px 20px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+footer a {
+    color: var(--color-primary);
+    transition: opacity var(--transition);
+}
+
+footer a:hover {
+    opacity: 0.75;
 }
 
 /* =====================
-   TABLET (>=600px)
+   ANIMATIONS
+===================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================
+   TABLET (>= 600px)
 ===================== */
 @media (min-width: 600px) {
     .info-cards {
@@ -233,28 +391,40 @@ footer {
     }
 
     .header-content h1 {
-        font-size: 40px;
+        font-size: 46px;
+    }
+
+    .tagline {
+        font-size: 18px;
     }
 }
 
 /* =====================
-   DESKTOP (>=1024px)
+   DESKTOP (>= 1024px)
 ===================== */
 @media (min-width: 1024px) {
+    /* Hide hamburger on desktop */
     .menu-btn {
         display: none;
     }
 
+    /* Inline nav */
     .nav-links {
         position: static;
         height: auto;
+        width: auto;
         flex-direction: row;
         background: transparent;
-        margin-top: 0;
+        transform: none;
+        gap: 0;
     }
 
     .nav-links li {
-        margin: 0 20px;
+        margin: 0 22px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
     }
 
     .info-cards {
@@ -262,10 +432,22 @@ footer {
     }
 
     .header-content h1 {
-        font-size: 48px;
+        font-size: 60px;
+    }
+
+    .sub-text {
+        font-size: 16px;
     }
 
     section {
-        padding: 100px 10%;
+        padding: 110px 10%;
+    }
+
+    .title h2 {
+        font-size: 36px;
+    }
+
+    .explore h2 {
+        font-size: 38px;
     }
 }
